@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="switch-container">
+      <span>LIGHT</span>
+      <div>
+        <input type="checkbox" name="switch" id="switch" />
+        <label for="switch" class="switch-label" autocomplete="off"></label>
+      </div>
+      <span>DARK</span>
+    </div>
+
+    <img src="/images/logo.svg" alt="" class="logo" />
+    <main class="app-container">
+      <form action="" class="form">
+        <!-- Bill -->
+        <fieldset class="form__field form__field--bill">
+          <legend class="form__title">Bill</legend>
+          <input
+            type="text"
+            class="form__input form__input--bill"
+            autocomplete="off"
+            placeholder="0"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          />
+        </fieldset>
+
+        <fieldset class="form__field form__field--currency">
+          <legend class="form__title">Select Currency</legend>
+          <label class="radio">
+            <input
+              type="radio"
+              class="radio__input"
+              name="currency"
+              value="USD"
+            />
+            <div class="radio__control"><span>$</span></div>
+          </label>
+
+          <label class="radio">
+            <input
+              type="radio"
+              class="radio__input"
+              name="currency"
+              value="RUB"
+            />
+            <span class="radio__control">₽</span>
+          </label>
+
+          <label class="radio">
+            <input
+              type="radio"
+              class="radio__input"
+              name="currency"
+              value="EUR"
+            />
+            <span class="radio__control">€</span>
+          </label>
+        </fieldset>
+
+        <!-- Tip -->
+        <fieldset class="form__field form__field--tip">
+          <legend class="form__title">Select Tip %</legend>
+
+          <label class="radio">
+            <input type="radio" class="radio__input" name="tip" value="5" />
+            <div class="radio__control"><span>5%</span></div>
+          </label>
+
+          <label class="radio">
+            <input type="radio" class="radio__input" name="tip" value="10" />
+            <span class="radio__control">10%</span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" class="radio__input" name="tip" value="15" />
+            <span class="radio__control">15%</span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" class="radio__input" name="tip" value="25" />
+            <span class="radio__control">25%</span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" class="radio__input" name="tip" value="50" />
+            <span class="radio__control">50%</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Custom"
+            class="form__custom"
+            autocomplete="off"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          />
+        </fieldset>
+
+        <!-- Number -->
+        <fieldset class="form__field form__field--number">
+          <legend class="form__title">Number of People</legend>
+          <input
+            type="text"
+            pattern="[1-9]+"
+            class="form__input form__input--number"
+            autocomplete="off"
+            placeholder="0"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          />
+        </fieldset>
+      </form>
+
+      <section class="info">
+        <div class="info__container">
+          <p class="info__title">Tip Amount <span>/ person</span></p>
+          <span class="info__label info__label--amount">$0</span>
+        </div>
+
+        <div class="info__container">
+          <p class="info__title">Total <span>/ person</span></p>
+          <span class="info__label info__label--total">$0</span>
+        </div>
+
+        <button class="btn--reset">Reset</button>
+      </section>
+    </main>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="script.js"></script>
+  </body>
+</html>
